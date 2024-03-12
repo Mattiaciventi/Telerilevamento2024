@@ -1,0 +1,12 @@
+
+#visualizzazione satellitare in R da imageRy
+#tutte le funzioni di imageRy comincia con im.
+
+library(terra) #richiamo pacchetti terra
+library(imageRy) #richiamo pacchetto imageRy
+
+#Lista di tuttr i dati disponibili in imageRy
+im.list()
+
+#importo i data presenti su imageRy in R
+im.import("matogrosso_ast_2006209_lrg.jpg")
