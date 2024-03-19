@@ -60,14 +60,41 @@ plot(b8, col=cln)
 
 # RGB space
 # stacksent: 
-# band2 blue element 1, stacksent[[1]] 
+# band2 blue element 1, stacksent[[1]], la banda numero 2 del blu corrisponde al primo elemento di stacksent
 # band3 green element 2, stacksent[[2]]
 # band4 red element 3, stacksent[[3]]
 # band8 nir element 4, stacksent[[4]]
-im.plotRGB(stacksent, r=3, g=2, b=1)
-im.plotRGB(stacksent, r=4, g=3, b=2)
+im.plotRGB(stacksent, r=3, g=2, b=1)   #visualizzazione reale 
+im.plotRGB(stacksent, r=4, g=3, b=2)   #NIR sul rosso e scalo gli altri
 im.plotRGB(stacksent, r=3, g=4, b=2)
 im.plotRGB(stacksent, r=3, g=2, b=4)
 
+#visualizzazione delle 2 foto.
+par(mfrow = c(1,2))
+im.plotRGB(stacksent, r=3, g=2, b=1)   #visualizzazione reale 
+im.plotRGB(stacksent, r=4, g=2, b=1)   # NIR sul rosso
 
-pairs(stacksent)
+dev.off()
+im.plotRGB(stacksent, r=4, g=3, b=2)   #NIR sul rosso e scalo gli altri
+par(mfrow = c(1,3))
+im.plotRGB(stacksent, r=4, g=3, b=2)   
+im.plotRGB(stacksent, r=4, g=2, b=1)
+im.plotRGB(stacksent, r=3, g=2, b=1)   #visualizzazione reale 
+
+dev.off()
+#NIR nel verde
+im.plotRGB(stacksent, r=3, g=4, b=2)   
+
+#NIR nel blu
+im.plotRGB(stacksent, r=3, g=2, b=4)   #suolo nudo giallo
+
+#multiframe finale
+par(mfrow = c(2,2))
+im.plotRGB(stacksent, r=3, g=2, b=4)  # nir su blu
+im.plotRGB(stacksent, r=3, g=4, b=2)  #NIR su verde
+im.plotRGB(stacksent, r=4, g=3, b=2)  #nir su rosso
+im.plotRGB(stacksent, r=3, g=2, b=1) #colori naturali
+
+pairs(stacksent) # per visualizzare tutti i grafici di cui ho bisogno
+
+
