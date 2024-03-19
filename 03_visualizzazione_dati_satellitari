@@ -13,6 +13,7 @@ im.import("matogrosso_ast_2006209_lrg.jpg")
 
 b2 <- im.import("sentinel.dolomites.b2.tif") 
 
+#colorRampPalette Queste funzioni sono utili per convertire schemi di colori "sequenziali" o "divergenti" progettati a mano in scale di colori continue
 cl <- colorRampPalette(c("black", "grey", "light grey")) (100)
 plot(b2, col=cl)
 
@@ -29,7 +30,7 @@ b8 <- im.import("sentinel.dolomites.b8.tif")
 plot(b8, col=cl)
 
 # multiframe
-par(mfrow=c(2,2))
+par(mfrow=c(2,2)) #mfrow <- Dato un numero di grafici n, trovare una disposizione per mostrare i grafici in un array.
 plot(b2, col=cl)
 plot(b3, col=cl)
 plot(b4, col=cl)
