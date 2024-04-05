@@ -27,6 +27,10 @@ im.plotRGB(m2006, r=2, g=3, b=1)
 dvi1992 = m1992[[1]] - m1992[[2]]
 plot(dvi1992)
 
+#La funzione colorRampPalette() è una funzione in R che crea una funzione per la 
+#generazione di palette di colori interpolati. Questa funzione è utile quando si
+#desidera creare una gamma di colori che si estende in modo graduale da un colore
+#all'altro.
 cl <- colorRampPalette(c("darkblue", "yellow", "red", "black")) (100)
 plot(dvi1992, col=cl)
 
