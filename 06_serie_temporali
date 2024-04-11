@@ -1,4 +1,4 @@
-
+#come quantificare il cambiamento 
 # time series analysis
 
 library(imageRy)
@@ -7,17 +7,22 @@ library(terra)
 im.list()
 
 # import the data
-EN01 <- im.import("EN_01.png")
-EN13 <- im.import("EN_13.png")
+#importo i dati sull'inquinamento di NO2 durante il covid
+EN01 <- im.import("EN_01.png") #dato di gennaio
+EN13 <- im.import("EN_13.png") #dato di marzo
 
-par(mfrow=c(2,1))
-im.plotRGB.auto(EN01)
-im.plotRGB.auto(EN13)
+#ne metto 1 sopra all'altra <- 2 righe e 1 colonne
+par(mfrow=c(2,1)) 
+im.plotRGBauto(EN01)
+im.plotRGBauto(EN13)
 
+#differenza tra le 2 immagini, l'importante è che sia sulla stessa banda [[1]] <- prima banda
+#ho preso i pixel del primo livello della prima immagine e gli ho sottratto i pixel del 
+#primo livello della seconda immagine
 # using the first element (band) of images
 dif = EN01[[1]] - EN13[[1]]
 
-# palette
+# palette con 100 gradazioni
 cldif <- colorRampPalette(c("blue", "white", "red")) (100)
 plot(dif, col=cldif)
 
