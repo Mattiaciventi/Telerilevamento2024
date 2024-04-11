@@ -22,17 +22,21 @@ im.plotRGBauto(EN13)
 # using the first element (band) of images
 dif = EN01[[1]] - EN13[[1]]
 
-# palette con 100 gradazioni
+# palette con 100 gradazioni dove red è ultimo perchè solitamente
+#sui grafici rappresenta il valore + alto
 cldif <- colorRampPalette(c("blue", "white", "red")) (100)
 plot(dif, col=cldif)
 
 
-### New example: temperature in Greenland
+### New example: Ice melt in Greenland
+
 
 g2000 <- im.import("greenland.2000.tif")
-clg <- colorRampPalette(c("black", "blue", "white", "red")) (100)
+#ci ho messo il nero per vedere le zone con le T° più basse
+clg <- colorRampPalette(c("black", "blue", "white", "red")) (100) 
 plot(g2000, col=clg)
 
+#importo le altre immagini
 g2005 <- im.import("greenland.2005.tif")
 g2010 <- im.import("greenland.2010.tif")
 g2015 <- im.import("greenland.2015.tif")
@@ -43,14 +47,28 @@ par(mfrow=c(1,2))
 plot(g2000, col=clg)
 plot(g2015, col=clg)
 
-# stacking the data
+#plotto tutti le immagini 
+par(mfrow=c(2,2))
+plot(g2000, col=clg)
+plot(g2005, col=clg)
+plot(g2010, col=clg)
+plot(g2015, col=clg)
+
+
+# stacking the data al posto di plottare tutte le immagini
 stackg <- c(g2000, g2005, g2010, g2015)
 plot(stackg, col=clg)
 
 # Exercise: make the differencxe between the first and the final elemnts of the stack
+#ho preso il primo livello (2000) e lo sottraggo con il quarto livello (2015)
 difg <- stackg[[1]] - stackg[[4]]
 # difg <- g2000 - g2015
 plot(difg, col=cldif)
+#le zone blu sono quelle con le T° + cambiate e quelle rosse con - differenze.
+#voglio però cambiare colore così che le zone rosse siano quelle con + differenze
+difg <- stackg[[1]] - stackg[[4]]
+clgreen <- colorRampPalette(c("red", "white", "blue")) (100) 
+plot(difg, col=clgreen)
 
 # Exercise: make a RGB plot using different years
 im.plotRGB(stackg, r=1, g=2, b=3)
