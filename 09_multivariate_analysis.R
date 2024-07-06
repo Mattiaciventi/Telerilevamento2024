@@ -9,10 +9,10 @@ library(viridis)
 im.list()
 
 # importing data
-b2 <- im.import("sentinel.dolomites.b2.tif") # blue
-b3 <- im.import("sentinel.dolomites.b3.tif") # green
-b4 <- im.import("sentinel.dolomites.b4.tif") # red
-b8 <- im.import("sentinel.dolomites.b8.tif") # nir
+b1 <- im.import("sentinel.dolomites.b2.tif") # blue
+b2 <- im.import("sentinel.dolomites.b3.tif") # green
+b3 <- im.import("sentinel.dolomites.b4.tif") # red
+b4 <- im.import("sentinel.dolomites.b8.tif") # nir
 
 sentdo <- c(b2, b3, b4, b8)
 
