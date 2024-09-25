@@ -1,0 +1,485 @@
+# Etosha_water_cover
+\documentclass{beamer} % Insert beamer to work as a presentation, not as a document
+\usepackage{graphicx} % Required for inserting images
+\usepackage{multicol}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage[absolute,overlay]{textpos}  % Package for positioning elements
+\usepackage{xcolor}  % To change text color
+\usepackage{hyperref}  % Package for hyperlinks
+
+% To vary the themes of the presentation, I use these 2 codes
+\usetheme{Antibes}
+\usecolortheme{crane}
+
+\title{Trends in Water Coverage at Etosha National Park (Namibia)}
+\author{Mattia Civenti}
+\date{September 2024}
+
+\begin{document}
+\setbeamertemplate{caption}[numbered] % Sequential numbering of images
+
+\maketitle
+% Every time I enter a section, it shows the initial summary
+
+\begin{frame}{INDEX}
+ \begin{enumerate}
+     \item \hyperlink{intro-slide}{Introduction}
+     \item \hyperlink{area-slide}{Study Area}
+     \item \hyperlink{obj-slide}{Objective}
+     \item \hyperlink{ind-slide}{Indices}
+     \item \hyperlink{meto-slide}{Methods}
+     \item \hyperlink{ris-slide}{Results}
+     \item \hyperlink{end-slide}{Conclusions}
+ \end{enumerate}
+\end{frame}
+
+\begin{frame}
+  \label{intro-slide}
+    \frametitle{Etosha National Park}
+      \framesubtitle{Introduction to the Park} 
+Located in northern Namibia, Etosha National Park is one of the largest and most famous national parks in the country. It was established in 1907 and covers an area of approximately 22,000 km². 
+The park is characterized by a variety of habitats, including savannas, woodlands, and the vast Etosha salt pan, which hosts more than 114 species of mammals, 340 species of birds, and numerous reptiles and insects. The landscape is predominantly dominated by the pan, which is generally dry for most of the year, but during the rainy season, it can partially fill with water, transforming into a temporary wetland that attracts numerous animals, including migratory birds.
+\end{frame}
+
+\begin{frame}{Etosha National Park}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.86\linewidth]{DSC_0990.jpg}
+        \caption{Fauna of Etosha (Photo by Mattia Civenti).}
+        \label{foto fauna}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Etosha National Park}
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\linewidth]{DSC_1037.jpg}
+        \caption{Typical waterholes during the dry season (Photo by Mattia Civenti).}
+        \label{foto pozza}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Etosha National Park}
+ \framesubtitle{Characteristics}
+  \begin{itemize}
+    \item \textbf{Size}: The Etosha pan extends for about 4,700 km². During the rainy season, it can flood, creating temporary lakes that can cover an even larger area;
+    \item \textbf{Origin}: The pan is the result of geological processes that date back millions of years. Initially, it was part of a large prehistoric lake called Lake Etosha, which dried up and left behind the vast saline plains we see today;
+    \item \textbf{Appearance}: During the rainy season, the pan becomes a vital habitat, while in the dry season, the water decreases drastically, forcing animals to move to more reliable water sources.
+  \end{itemize}
+\end{frame}
+
+
+ \begin{frame}
+  \label{area-slide}
+   \frametitle{Location}
+    \begin{columns}[T]
+        % First column
+        \begin{column}{0.5\textwidth}
+            \centering
+            \begin{figure}
+                \includegraphics[width=\linewidth]{etosha2.png} % \linewidth to fit the entire width of the column
+                \caption{Etosha in Namibia.}
+            \end{figure}
+        \end{column}
+
+        % Second column
+        \begin{column}{0.5\textwidth}
+            \centering
+            \begin{figure}
+                \includegraphics[width=\linewidth]{etosha1.png} % \linewidth to fit the entire width of the column
+                \caption{Etosha National Park, detail of the Pan.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{}
+ \frametitle{Pan}
+    \begin{multicols}  {2}
+     \section*{Column 1}
+    \begin{figure}[h]
+        \includegraphics[width=1\linewidth]{pan.jpg}
+        \caption{Pan: photo of August, 2024 (Photo by Alberto Tarroni).}
+    \end{figure} 
+  \columnbreak
+    \begin{itemize}
+     \item 4800 km\textsuperscript{2}
+     \item Essential for the survival of wildlife, as it attracts animals to its numerous natural and artificial waterholes, even in the absence of permanent water.
+    \end{itemize}
+  \end{multicols}
+\end{frame}
+
+ 
+\begin{frame}{Objective}
+  \label{obj-slide}
+The objective of the study is to visually analyze and classify how the percentage of surface water coverage in Etosha National Park in Namibia varies over 4 different years (2017, 2019, 2021, 2024).\vspace{1em} 
+%space between lines
+
+The chosen period for the analysis is April, as it is right after the rainy season, allowing for observation of various water accumulations. \vspace{1em}
+
+All images were obtained from the Copernicus website using data from the Sentinel-2 satellite. Images from the first available date in April were selected, where cloud cover was below 5%.
+ \end{frame}
+
+\begin{frame}{Indices}
+  \label{ind-slide}
+  \begin{itemize}
+    \item \textbf{\hyperlink{ndvi-slide}{NDVI}} (Normalized Difference Vegetation Index);
+    \vspace{1em} 
+    \item \textbf{\hyperlink{ndwi-slide}{NDWI}}  (Normalized Difference Water Index);
+    \vspace{1em} 
+    \item \textbf{\hyperlink{mndwi-slide}{MNDWI}} (Modified Normalized Difference Water Index);
+    \vspace{1em} 
+    \item \textbf{\hyperlink{wi}{WATER INDEX}}
+ \end{itemize}
+    
+\end{frame}
+
+\begin{frame}{NDVI}
+ \begin{itemize}
+   \label{ndvi-slide} %label for the link
+    \item \textbf{NDVI:} (Normalized Difference Vegetation Index) a commonly used index for monitoring vegetation and plant health on a large scale. It is based on the analysis of satellite images and utilizes the light reflection properties of vegetation.
+    \item \textbf{Formula:} 
+\[
+NDVI = \frac{(Band08 - Band04)}{(Band08 + Band04)}
+\]    
+    \begin{itemize}
+        \item Band08: reflectance in the near-infrared band (NIR);
+        \item Band04: reflectance in the red band (RED).
+    \end{itemize}
+ \end{itemize}
+\end{frame}
+
+
+\begin{frame} {NDVI}
+ \begin{itemize}
+   \label{ndvi-slide}
+    \item Values close to 1 represent dense and healthy vegetation;
+    \item Values around 0 represent areas with sparse or poor vegetation, bare soil, rocks, or sand;
+    \item Values close to -1 indicate water or surfaces devoid of vegetation.
+  \end{itemize}
+  \vspace{1em}
+    In this analysis, the index was used to compare the indexed images and subsequently masked with true-color images, allowing for more accurate identification of vegetated areas compared to those without, thereby improving the accuracy of classification among different cover components.
+\end{frame}
+
+\begin{frame}{NDWI}
+  \begin{itemize}
+    \label{ndwi-slide}
+      \item \textbf{NDWI:} (Normalized Difference Water Index) is an index used to monitor and analyze water surfaces. It is effective in identifying areas of surface water, even in environments with vegetation.
+      \item \textbf{Formula:}
+      \[
+NDWI = \frac{(Band03 - Band08)}{(Band03 + Band08)}
+\]    
+    \begin{itemize}
+     \item Band03: represents the reflectance of the green band (GREEN);  
+     \item Band08: reflectance in the near-infrared band (NIR).
+    \end{itemize}
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{NDWI}
+ \begin{itemize}
+   \label{ndwi-slide}
+    \item Positive values indicate the presence of water;
+    \item Negative values indicate non-aquatic surfaces such as snow or areas without vegetation.
+ \end{itemize}
+ In this analysis, NDWI was calculated for each year, with results visualized and a mask created to delineate water areas. Subsequently, the number of water pixels was counted and their percentage relative to the total area was calculated, providing a relatively accurate estimate of water coverage in the study area.
+\end{frame}
+
+\begin{frame}{MNDWI}
+ \begin{itemize}
+   \label{mndwi-slide}
+    \item \textbf{MNDWI:} (Modified Normalized Difference Water Index) is an index used to identify and monitor areas of surface water. It is a variant of the NDWI (Normalized Difference Water Index) and is employed to improve the distinction between water and other landscape elements, such as vegetation and soil.
+    \item \textbf{Formula:}
+    \[
+MNDWI = \frac{(Band03 - Band12)}{(Band03 + Band12)}
+\]  
+    \begin{itemize}
+        \item Band03: represents the reflectance of the green band (GREEN);
+        \item Band12: represents the reflectance of the shortwave infrared band (SWIR).
+    \end{itemize}
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{MNDWI}
+  \begin{itemize}
+   \label{mndwi-slide}
+    \item Values close to 1 indicate the presence of water;
+    \item Values close to 0 or lower indicate bare soil, vegetation, or surfaces not covered by water.
+  \end{itemize}
+  \vspace{2em}
+  In this analysis, MNDWI was calculated for the different years, results were visualized, and a mask was created for aquatic areas. Additionally, I counted the water pixels and calculated their percentage of the total, providing a measure of water coverage in the area of interest.  
+\end{frame}
+
+\begin{frame}{WATER INDEX}
+\begin{itemize}
+  \label{wi-slide}
+    \item \textbf{WI:} This combination does not follow a standard formula like the classic NDWI or MNDWI but still allows for analyzing the difference between the reflectance of green and that of the near-infrared (NIR), analyzing the spectral behavior differences between areas with water, vegetation, and bare soil.
+    \item \textbf{Formula:}
+ \[
+WI = {(Band03 - Band8A)}
+\]  
+  \begin{itemize}
+      \item Band03: represents the reflectance of the green band (GREEN);
+      \item Band8A: represents the narrow NIR.
+  \end{itemize}
+ \end{itemize}
+\end{frame}
+
+
+ \begin{frame}{Methods and Analysis}
+   \label{meto-slide}
+    \begin{enumerate} 
+        \item Loading packages.
+        \item Loading individual bands for each year downloaded from Copernicus.
+        \item Manual classification with the help of true color images, SWIR images, and an NDVI mask to distinguish vegetation from bare soil on the surface of the area.
+    \end{enumerate}
+    \begin{figure}[h]
+        \centering
+        \includegraphics[width=0.8\linewidth]{mask2017.png}
+        \caption{Mask 2017}
+    \end{figure} 
+\end{frame}
+  
+ \begin{frame}{Methods and Analysis}
+   \begin{enumerate}[4]  % Use [resume] to continue numbering
+     \item \textbf{Classification:} 
+   \end{enumerate}
+     \begin{figure}
+      \centering
+      \includegraphics[width=0.45\linewidth]{class17.png}
+      \includegraphics[width=0.45\linewidth]{class19.png}\\ % double \\ moves to a new line
+      \includegraphics[width=0.45\linewidth]{class21.png}
+      \includegraphics[width=0.45\linewidth]{class24.png}
+      \caption{Grey = Pan; Green = vegetation; Blue = water; Brown = bare soil}
+      \label{fig:enter-label}
+   \end{figure}
+\end{frame}
+
+\begin{frame}{Methods and Analysis}
+  \begin{enumerate}[5]  
+     \item \textbf{Coverage Calculation:} the proportion of each class was obtained relative to the total raster cells in the different years. 
+     \end{enumerate}
+     \begin{enumerate} [6]
+         \item \textbf{Bar Chart:}
+     \end{enumerate}
+       \begin{figure}
+           \centering
+           \includegraphics[width=0.8\linewidth]{grafico a barre.png}
+           \caption{Percentage cover over the years.}
+           \label{fig:enter-label}
+       \end{figure}
+\end{frame}
+
+
+\begin{frame}{Methods and Analysis}
+ \framesubtitle{NDWI}
+  \begin{enumerate}[7]
+    \item Visual analysis of differences over the years by subtracting the different indices from each other to understand which area was more or less covered by water.
+  \end{enumerate}
+   \begin{enumerate} [8]
+      \item \textbf{NDWI:} worked with Bands 3 and 8 of Sentinel-2 to analyze the presence of water in the Park. After processing the data, a mask was created to isolate areas corresponding to the presence of water, also utilizing available satellite images for the study. For each year, the percentage of water coverage on the surface of the Park was calculated.\\
+       Values $> 0 \rightarrow$ presence of water.
+   \end{enumerate}
+\end{frame}
+
+\begin{frame}{Methods and Analysis}
+  \framesubtitle{NDWI}
+    \begin{figure}
+     \centering
+     \includegraphics[width=0.45\linewidth]{Ndwi2017.png}
+     \includegraphics[width=0.45\linewidth]{ndwi2019.png}\\ 
+     \includegraphics[width=0.45\linewidth]{ndwi2021.png}
+     \includegraphics[width=0.45\linewidth]{ndwi2024.png}
+      \caption{Image analysis over the 4 years with the NDWI index.\\
+       \textbf{(Water coverage:} \textbf{2017} $\rightarrow$ 13.7\%; \textbf{2019} $\rightarrow$ 10.19\%; \textbf{2021} $\rightarrow$ 10.16\%; \textbf{2024} $\rightarrow$ 7\% .)}
+    \label{fig:enter-label}
+   \end{figure}
+\end{frame}
+
+\begin{frame}{Methods and Analysis}
+ \framesubtitle{MNDWI}
+ \begin{enumerate}[9]
+     \item Use of other indices to extract as much data as possible on water coverage in the Park and compare them with each other.
+ \end{enumerate}
+   \begin{enumerate}[10]
+       \item \textbf{MNDWI:} A similar approach was used with Band 3 and Band 12 of Sentinel-2. In this case, a mask was also created to extract the areas covered by water. To establish the threshold value in 2017, we started from 0 and incremented until a masked area matched the coverage distribution of the available satellite images. In the absence of a match, the threshold was set to a value greater than 0. Here too, for each year, the percentage of water coverage over the Park's surface was calculated.
+   \end{enumerate}
+\end{frame}
+
+\begin{frame}{Methods and Analysis}
+ \framesubtitle{MNDWI}
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.45\linewidth]{MNDWI2017.png}
+    \includegraphics[width=0.45\linewidth]{MNDWI2019.png}\\
+    \includegraphics[width=0.45\linewidth]{MNDWI2021.png}
+    \includegraphics[width=0.45\linewidth]{MNDwi2024.png}
+    \caption{Image analysis over the 4 years with the MNDWI index.\\
+    \textbf{(Water Coverage:} \textbf{2017} $\rightarrow$ 16.1\%; \textbf{2019} $\rightarrow$ 4.1\%; \textbf{2021} $\rightarrow$ 14.3\%; \textbf{2024} $\rightarrow$ 7.2\%.)}
+   \label{fig:enter-label}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Methods and Analysis}
+  \framesubtitle{WATER INDEX}
+    \begin{enumerate}[11]
+      \item \textbf{Water Index:} The use of Band 3 and Band 8A (narrow NIR) allowed for the calculation of this index, which shows, through values $>$ 0, the presence of water on the surface of the area in the different years. \\
+      Here again, a mask was used to calculate water coverage by taking a proportion between the masked pixels and the total pixels.
+   \end{enumerate}
+\end{frame}
+
+\begin{frame}{Methods and Analysis}
+  \framesubtitle{WATER INDEX}
+    \begin{figure}
+      \centering
+      \includegraphics[width=0.45\linewidth]{wi17.png}
+      \includegraphics[width=0.45\linewidth]{wi19.png}\\ 
+      \includegraphics[width=0.45\linewidth]{wi21.png}
+      \includegraphics[width=0.45\linewidth]{wi24.png}
+       \caption{Image analysis over the 4 years with the WI index.\\
+        \textbf{(Water Coverage:} \textbf{2017} $\rightarrow$ 12.1\%; \textbf{2019} $\rightarrow$ 5.1\%; \textbf{2021} $\rightarrow$ 8.3\%;\\ \textbf{2024} $\rightarrow$ 5.2\%.)}
+     \label{fig:enter-label}
+    \end{figure}
+\end{frame}
+
+\begin{frame}{Results}
+  \label{ris-slide}
+      Construction of a dataframe of coverage percentages for the 4 years with the different indices used.
+ \begin{table}[h]
+  \centering
+   \scalebox{0.8}{ 
+    \begin{tabular}{|c|c|c|c|c|} 
+     \hline 
+      \textbf{Year} & \textbf{Classification (\%)} & \textbf{Water Index (\%)} & \textbf{MNDWI (\%)} & \textbf{NDWI (\%)} \\
+       \hline
+       2017 & 13.3 & 12.1 & 16.1 & 13.7 \\
+       2019 & 9.4  & 5.1  & 4.1  & 10.19 \\
+       2021 & 9.6  & 8.3  & 14.3 & 10.16 \\
+       2024 & 6.4  & 5.2  & 7.2  & 7 \\
+      \hline
+    \end{tabular}
+}
+   \caption{Coverage of different classifications for the years 2017, 2019, 2021, 2024.}
+  \label{tab:copertura}
+ \end{table}
+\end{frame}
+
+\begin{frame}{Results}
+      Development of a graph with four lines (and corresponding points) that compares manual classification methods and the NDWI water index in different years, graphically highlighting the differences between methods in terms of percentage coverage.
+    \begin{figure}
+        \centering
+        \includegraphics[width=0.8\linewidth]{GRAFICO.png}
+        \caption{Line plot.}
+        \label{fig:enter-label}
+    \end{figure}
+\end{frame}
+
+ \begin{frame}{Results}
+   \begin{figure}
+      \centering
+      \includegraphics[width=0.48\linewidth]{1.png}
+      \includegraphics[width=0.48\linewidth]{2.png}\\ 
+      \includegraphics[width=0.48\linewidth]{3.png}
+      \includegraphics[width=0.48\linewidth]{4.png}
+       \caption{Differences in the MNDWI index to observe gains and losses of surface water in the examined years.}
+     \label{fig:enter-label}
+    \end{figure}
+\end{frame}
+
+ \begin{frame}{Results}
+     \begin{figure}
+      \centering
+      \includegraphics[width=0.9\linewidth]{PCA.png}
+      \caption{PCA Analysis.}
+      \label{fig:enter-label}
+    \end{figure}
+ \end{frame}
+
+ \begin{frame}{Results}
+   \textbf{Observations:} \begin{itemize}
+      \item The points represent the years (2017, 2019, 2021, 2024), and their position reflects how they are situated relative to the principal components;
+      \item Coverage\_Classification, MNDWI, NDWI, and Water Index are close in the biplot: suggesting that these water coverage classification methods are correlated;
+      \item The standard deviation is positioned far from the other variables, suggesting it has a weaker or different correlation with the other variables;
+      \item The years 2024 and 2017 are located at a certain distance along the PC1 axis, suggesting that water coverage differs significantly between these years.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+      \begin{columns}[T]
+        % First column
+        \begin{column}{0.5\linewidth}
+            \centering
+            \begin{figure}
+                \includegraphics[width=\linewidth]{DIFF.png} 
+                \caption{Differences between the year 2024 and the year 2017.}
+            \end{figure}
+        \end{column}
+
+        % Second column
+        \begin{column}{0.5\linewidth}
+            \centering
+            \begin{figure}
+                \includegraphics[width=\linewidth]{diff2.png} 
+                \caption{Differences between the year 2024 and the year 2021.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Results}
+ \begin{itemize}
+     \item \textbf{Areas with positive differences:} represent a greater variability in water coverage and are correlated with the presence of areas (yellow zones that create heterogeneity among pixels) of water accumulation in 2024 compared to 2017 or 2021.
+     \item \textbf{Areas with negative differences:} the reduction in standard deviation in these areas may be due to the fact that all zones, which in the past may have been more variable (alternating between dry and wet areas), have become uniformly dry. This creates fewer differences among pixels and a more homogeneous situation, even if no water is present.
+ \end{itemize}
+\end{frame}
+
+\begin{frame}{Results}
+      The same approach was used utilizing the standard deviation of NDWI index images.
+      \begin{columns}[T]
+        % First column
+        \begin{column}{0.5\textwidth}
+            \centering
+            \begin{figure}
+                \includegraphics[width=\linewidth]{24-17.png} 
+                \caption{Differences between the year 2024 and the year 2017.}
+            \end{figure}
+        \end{column}
+
+        % Second column
+        \begin{column}{0.5\textwidth}
+            \centering
+            \begin{figure}
+                \includegraphics[width=\linewidth]{24-21.png} 
+                \caption{Differences between the year 2024 and the year 2021.}
+            \end{figure}
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Conclusions}
+  \label{end-slide}
+   \begin{itemize}
+       \item As visible from the PCA, the indices are more or less pairwise correlated: WI and MNDWI; NDWI and manual classification.
+       \item The Water Index and MNDWI indicate a consistent decrease in the presence of water in 2024 and 2019, highlighting that areas that were previously wet have become significantly drier. The manual classification and the NDWI index did not confirm such a sharp decrease for the year 2019.
+  \end{itemize}
+ \end{frame}
+
+ \begin{frame}{Conclusions}
+   \begin{itemize}
+       \item In the MNDWI index for 2019, the masked area with "true" is much smaller than what is observed in the satellite images. This could mean, as confirmed by the NDWI images from Copernicus, that there is very little water present on the surface, showing values just below zero in the graphical representation of the index.
+       \item It would be interesting to continue monitoring changes in water coverage on the surface of Etosha National Park and to understand, based on this water availability, whether there is a correlation with the movement of animals in this area.
+   \end{itemize}
+ \end{frame}   
+ 
+\begin{frame}[plain]
+    \begin{textblock*}{\paperwidth}(0cm, 1cm)  % Absolute position of the text
+        \centering
+        \Huge \color{white}\textbf{Thank you for your attention!}  % Large, bold text
+    \end{textblock*}
+     % Shift the image to the left with negative hspace
+    \hspace*{-1.1cm} % Adjust the value to eliminate the white border
+    \includegraphics[width=\paperwidth,height=\paperheight]{copia.jpg}
+\end{frame}
+\end{document}
